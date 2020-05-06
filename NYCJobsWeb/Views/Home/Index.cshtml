@@ -313,7 +313,7 @@
     function UpdateBusinessTitleFacets(data) {
         var facetResultsHTML = '';
         for (var i = 0; i < data.length; i++) {
-            facetResultsHTML += '<li><a href="javascript:void(0)" onclick="ChooseBusinessTitleFacet(\'' + data[i].Value + '\');">' + data[i].Value + ' (' + data[i].Count + ')</span></a></li>';
+            facetResultsHTML += '<li><a href="javascript:void(0)" onclick="ChooseBusinessTitleFacet(\'' + data[i][0].Value + '\');">' + data[i][0].Value + ' (' + data[i].Count + ')</span></a></li>';
         }
 
         $("#business_title_facets").html(facetResultsHTML);
@@ -328,7 +328,7 @@
     function UpdatePostingTypeFacets(data) {
         var facetResultsHTML = '';
         for (var i = 0; i < data.length; i++) {
-            facetResultsHTML += '<li><a href="javascript:void(0)" onclick="ChoosePostingTypeFacet(\'' + data[i].Value + '\');">' + data[i].Value + ' (' + data[i].Count + ')</span></a></li>';
+            facetResultsHTML += '<li><a href="javascript:void(0)" onclick="ChoosePostingTypeFacet(\'' + data[i][0].Value + '\');">' + data[i][0].Value + ' (' + data[i].Count + ')</span></a></li>';
         }
 
         $("#posting_type_facets").html(facetResultsHTML);
@@ -342,10 +342,10 @@
     function UpdateSalaryRangeFacets(data) {
         var facetResultsHTML = '';
         for (var i = 0; i < data.length; i++) {
-            var lowRange = parseInt(data[i].Value);
+            var lowRange = parseInt(data[i][0].Value);
             var highRange = lowRange + 49999;
 
-            facetResultsHTML += '<li><a href="javascript:void(0)" onclick="ChooseSalaryRangeFacet(\'' + data[i].Value + '\');">$' + lowRange.toLocaleString() + ' - $' + highRange.toLocaleString() + ' (' + data[i].Count + ')</span></a></li>';
+            facetResultsHTML += '<li><a href="javascript:void(0)" onclick="ChooseSalaryRangeFacet(\'' + data[i][0].Value + '\');">$' + lowRange.toLocaleString() + ' - $' + highRange.toLocaleString() + ' (' + data[i].Count + ')</span></a></li>';
         }
 
         $("#salary_range_facets").html(facetResultsHTML);

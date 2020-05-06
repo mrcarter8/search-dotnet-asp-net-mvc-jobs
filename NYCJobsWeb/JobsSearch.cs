@@ -24,8 +24,8 @@ namespace NYCJobsWeb
         {
             try
             {
-                string searchServiceName = ConfigurationManager.AppSettings["SearchServiceName"];
-                string apiKey = ConfigurationManager.AppSettings["SearchServiceApiKey"];
+                string searchServiceName = ConfigurationSettings.AppSettings["SearchServiceName"];
+                string apiKey = ConfigurationSettings.AppSettings["SearchServiceApiKey"];
 
                 // Create an HTTP reference to the catalog index
                 var serviceUri = new Uri(String.Format("https://{0}.search.windows.net", searchServiceName));
