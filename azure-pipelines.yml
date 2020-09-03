@@ -1,8 +1,0 @@
-- task: AzurePowerShell@5
-  inputs:
-    azureSubscription: 'Azure Search DEV Search PM (eladz,lanceo)(ee787b9b-a25f-4d20-86e9-45fcea5253dd)'
-    ScriptType: 'InlineScript'
-    Inline: |
-      Install-Module -Name Az.Search
-      New-AzSearchService -ResourceGroupName "mcarter-devopsdemo-rg" -Name "my-demo-searchapp" -Sku "mcarter-devopsdemo" -Location "West US" -PartitionCount 1 -ReplicaCount 1
-    azurePowerShellVersion: 'LatestVersion'
